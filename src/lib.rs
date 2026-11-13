@@ -20,6 +20,7 @@ pub struct Expr(Arc<Node>);
 struct Node {
     kind: Kind,
     height: u16,
+    required_ambient: u64,
 }
 
 #[derive(Debug)]
@@ -45,7 +46,16 @@ impl Expr {
         if height > MAX_HEIGHT {
             return Err(Error::HeightLimit);
         }
-        Ok(Self(Arc::new(Node { kind, height })))
+        let required_ambient = match &kind {
+            BVar(i) => u64::from(*i) + 1,
+            Sort(_) => 0,
+            App(f, x) => f.0.required_ambient.max(x.0.required_ambient),
+            Lam(ty, body) | Pi(ty, body) => ty.0.required_ambient
+                .max(body.0.required_ambient.saturating_sub(1)),
+            Let(ty, value, body) => ty.0.required_ambient.max(value.0.required_ambient)
+                .max(body.0.required_ambient.saturating_sub(1)),
+        };
+        Ok(Self(Arc::new(Node { kind, height, required_ambient })))
     }
 
     pub fn kind(&self) -> &Kind {
@@ -153,30 +163,16 @@ fn map_children(
 }
 
 fn validate(expr: &Expr, ambient: u64, work: &mut Work) -> Result<(), Error> {
-    use Kind::*;
     work.step()?;
-    match expr.kind() {
-        BVar(i) if u64::from(*i) >= ambient => Err(Error::OutOfScope),
-        BVar(_) | Sort(_) => Ok(()),
-        App(f, x) => {
-            validate(f, ambient, work)?;
-            validate(x, ambient, work)
-        }
-        Lam(ty, body) | Pi(ty, body) => {
-            validate(ty, ambient, work)?;
-            validate(body, ambient + 1, work)
-        }
-        Let(ty, value, body) => {
-            validate(ty, ambient, work)?;
-            validate(value, ambient, work)?;
-            validate(body, ambient + 1, work)
-        }
+    if expr.0.required_ambient > ambient {
+        return Err(Error::OutOfScope);
     }
+    Ok(())
 }
 
 fn lift(expr: &Expr, amount: u32, cutoff: u32, work: &mut Work) -> Result<Expr, Error> {
     work.step()?;
-    if amount == 0 {
+    if amount == 0 || expr.0.required_ambient <= u64::from(cutoff) {
         return Ok(expr.clone());
     }
     if let Kind::BVar(i) = expr.kind() {
@@ -192,6 +188,9 @@ fn lift(expr: &Expr, amount: u32, cutoff: u32, work: &mut Work) -> Result<Expr, 
 fn instantiate(body: &Expr, value: &Expr, work: &mut Work) -> Result<Expr, Error> {
     fn visit(expr: &Expr, value: &Expr, depth: u32, work: &mut Work) -> Result<Expr, Error> {
         work.step()?;
+        if expr.0.required_ambient <= u64::from(depth) {
+            return Ok(expr.clone());
+        }
         if let Kind::BVar(i) = expr.kind() {
             return match i.cmp(&depth) {
                 std::cmp::Ordering::Less => Ok(expr.clone()),
