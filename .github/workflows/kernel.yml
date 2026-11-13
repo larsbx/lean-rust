@@ -1,0 +1,29 @@
+name: Rust kernel
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Install Rust
+        run: rustup toolchain install 1.85.0 --profile minimal
+      - name: Build and test
+        run: |
+          cargo +1.85.0 build --locked --offline --all-targets
+          cargo +1.85.0 test --locked --offline
+      - name: Install Lean and replay trusted-kernel oracle
+        shell: bash
+        run: |
+          curl --fail --silent --show-error --location https://github.com/leanprover/elan/releases/download/v4.1.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --no-modify-path --default-toolchain none
+          "$HOME/.elan/bin/elan" toolchain install "$(cat lean-toolchain)"
+          "$HOME/.elan/bin/lean" --run oracle/Kernel.lean "$RUNNER_TEMP/cases.tsv"
+          diff -u oracle/cases.tsv "$RUNNER_TEMP/cases.tsv"
