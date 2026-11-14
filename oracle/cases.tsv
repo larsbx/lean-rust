@@ -1,0 +1,19 @@
+eq	beta	true	true	a l s1 v0 s0	s0
+eq	zeta	true	true	t s1 s0 v0	s0
+eq	alpha	true	true	l s1 v0	l s1 v0
+eq	beta-under-pi	true	true	p s1 a l s1 v0 v0	p s1 v0
+eq	dependent-beta	true	true	a l s1 l v0 v0 s0	l s0 v0
+eq	capture-under-lambda	true	true	l s1 a l s1 l s1 v1 v0	l s1 l s1 v1
+eq	shadowing	false	false	l s1 l s1 v1	l s1 l s1 v0
+eq	different-sorts	false	false	s1	s2
+eq	different-domains	false	false	l s1 v0	l s2 v0
+eq	eta-outside-fragment	true	false	l p s1 s1 v0	l p s1 s1 l s1 a v1 v0
+eq	proof-irrelevance-outside-fragment	true	false	l s0 l v0 l v1 v1	l s0 l v0 l v1 v0
+whnf	beta-head	a l s1 v0 s0	s0
+whnf	zeta-head	t s1 s0 v0	s0
+whnf	whnf-stops-under-lambda	l s1 a l s1 v0 v0	l s1 a l s1 v0 v0
+whnf	let-in-function-position	a t p s1 s1 l s1 v0 v0 s0	s0
+inst	lift-open-replacement	1	l s1 v1	v0	l s1 v1
+inst	preserve-inner-and-decrement-outer	1	p v1 a v0 v2	v0	p v0 a v0 v1
+inst	let-scopes	2	t v0 v2 a v1 v0	v1	t v1 v1 a v2 v0
+inst	lift-cutoff	1	l s1 v1	l s1 a v0 v1	l s1 l s1 a v0 v2
