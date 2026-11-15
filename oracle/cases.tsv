@@ -9,6 +9,150 @@ eq	different-sorts	false	false	s1	s2
 eq	different-domains	false	false	l s1 v0	l s2 v0
 eq	eta-outside-fragment	true	false	l p s1 s1 v0	l p s1 s1 l s1 a v1 v0
 eq	proof-irrelevance-outside-fragment	true	false	l s0 l v0 l v1 v1	l s0 l v0 l v1 v0
+eq	generated-2-1-first	true	true	l s1 l s1 a l s1 v0 v1	l s1 l s1 v1
+eq	generated-2-1-last	true	true	l s1 l s1 v0	l s1 l s1 a l s1 v0 v0
+eq	generated-2-1-distinct	false	false	l s1 l s1 a l s1 v0 v1	l s1 l s1 a l s1 v0 v0
+eq	generated-2-2-first	true	true	l s1 l s1 t s1 a l s1 v0 v1 v0	l s1 l s1 v1
+eq	generated-2-2-last	true	true	l s1 l s1 v0	l s1 l s1 t s1 a l s1 v0 v0 v0
+eq	generated-2-2-distinct	false	false	l s1 l s1 t s1 a l s1 v0 v1 v0	l s1 l s1 t s1 a l s1 v0 v0 v0
+eq	generated-2-3-first	true	true	l s1 l s1 a l s1 v0 t s1 a l s1 v0 v1 v0	l s1 l s1 v1
+eq	generated-2-3-last	true	true	l s1 l s1 v0	l s1 l s1 a l s1 v0 t s1 a l s1 v0 v0 v0
+eq	generated-2-3-distinct	false	false	l s1 l s1 a l s1 v0 t s1 a l s1 v0 v1 v0	l s1 l s1 a l s1 v0 t s1 a l s1 v0 v0 v0
+eq	generated-2-4-first	true	true	l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v1 v0 v0	l s1 l s1 v1
+eq	generated-2-4-last	true	true	l s1 l s1 v0	l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-2-4-distinct	false	false	l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v1 v0 v0	l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-2-5-first	true	true	l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v1 v0 v0	l s1 l s1 v1
+eq	generated-2-5-last	true	true	l s1 l s1 v0	l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-2-5-distinct	false	false	l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v1 v0 v0	l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-2-6-first	true	true	l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v1 v0 v0 v0	l s1 l s1 v1
+eq	generated-2-6-last	true	true	l s1 l s1 v0	l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0 v0
+eq	generated-2-6-distinct	false	false	l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v1 v0 v0 v0	l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0 v0
+eq	generated-3-1-first	true	true	l s1 l s1 l s1 a l s1 v0 v2	l s1 l s1 l s1 v2
+eq	generated-3-1-last	true	true	l s1 l s1 l s1 v0	l s1 l s1 l s1 a l s1 v0 v0
+eq	generated-3-1-distinct	false	false	l s1 l s1 l s1 a l s1 v0 v2	l s1 l s1 l s1 a l s1 v0 v0
+eq	generated-3-2-first	true	true	l s1 l s1 l s1 t s1 a l s1 v0 v2 v0	l s1 l s1 l s1 v2
+eq	generated-3-2-last	true	true	l s1 l s1 l s1 v0	l s1 l s1 l s1 t s1 a l s1 v0 v0 v0
+eq	generated-3-2-distinct	false	false	l s1 l s1 l s1 t s1 a l s1 v0 v2 v0	l s1 l s1 l s1 t s1 a l s1 v0 v0 v0
+eq	generated-3-3-first	true	true	l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v2 v0	l s1 l s1 l s1 v2
+eq	generated-3-3-last	true	true	l s1 l s1 l s1 v0	l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v0 v0
+eq	generated-3-3-distinct	false	false	l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v2 v0	l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v0 v0
+eq	generated-3-4-first	true	true	l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v2 v0 v0	l s1 l s1 l s1 v2
+eq	generated-3-4-last	true	true	l s1 l s1 l s1 v0	l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-3-4-distinct	false	false	l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v2 v0 v0	l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-3-5-first	true	true	l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v2 v0 v0	l s1 l s1 l s1 v2
+eq	generated-3-5-last	true	true	l s1 l s1 l s1 v0	l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-3-5-distinct	false	false	l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v2 v0 v0	l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-3-6-first	true	true	l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v2 v0 v0 v0	l s1 l s1 l s1 v2
+eq	generated-3-6-last	true	true	l s1 l s1 l s1 v0	l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0 v0
+eq	generated-3-6-distinct	false	false	l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v2 v0 v0 v0	l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0 v0
+eq	generated-4-1-first	true	true	l s1 l s1 l s1 l s1 a l s1 v0 v3	l s1 l s1 l s1 l s1 v3
+eq	generated-4-1-last	true	true	l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 a l s1 v0 v0
+eq	generated-4-1-distinct	false	false	l s1 l s1 l s1 l s1 a l s1 v0 v3	l s1 l s1 l s1 l s1 a l s1 v0 v0
+eq	generated-4-2-first	true	true	l s1 l s1 l s1 l s1 t s1 a l s1 v0 v3 v0	l s1 l s1 l s1 l s1 v3
+eq	generated-4-2-last	true	true	l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 t s1 a l s1 v0 v0 v0
+eq	generated-4-2-distinct	false	false	l s1 l s1 l s1 l s1 t s1 a l s1 v0 v3 v0	l s1 l s1 l s1 l s1 t s1 a l s1 v0 v0 v0
+eq	generated-4-3-first	true	true	l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v3 v0	l s1 l s1 l s1 l s1 v3
+eq	generated-4-3-last	true	true	l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v0 v0
+eq	generated-4-3-distinct	false	false	l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v3 v0	l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v0 v0
+eq	generated-4-4-first	true	true	l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v3 v0 v0	l s1 l s1 l s1 l s1 v3
+eq	generated-4-4-last	true	true	l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-4-4-distinct	false	false	l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v3 v0 v0	l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-4-5-first	true	true	l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v3 v0 v0	l s1 l s1 l s1 l s1 v3
+eq	generated-4-5-last	true	true	l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-4-5-distinct	false	false	l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v3 v0 v0	l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-4-6-first	true	true	l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v3 v0 v0 v0	l s1 l s1 l s1 l s1 v3
+eq	generated-4-6-last	true	true	l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0 v0
+eq	generated-4-6-distinct	false	false	l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v3 v0 v0 v0	l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0 v0
+eq	generated-5-1-first	true	true	l s1 l s1 l s1 l s1 l s1 a l s1 v0 v4	l s1 l s1 l s1 l s1 l s1 v4
+eq	generated-5-1-last	true	true	l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 a l s1 v0 v0
+eq	generated-5-1-distinct	false	false	l s1 l s1 l s1 l s1 l s1 a l s1 v0 v4	l s1 l s1 l s1 l s1 l s1 a l s1 v0 v0
+eq	generated-5-2-first	true	true	l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v4 v0	l s1 l s1 l s1 l s1 l s1 v4
+eq	generated-5-2-last	true	true	l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v0 v0
+eq	generated-5-2-distinct	false	false	l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v4 v0	l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v0 v0
+eq	generated-5-3-first	true	true	l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v4 v0	l s1 l s1 l s1 l s1 l s1 v4
+eq	generated-5-3-last	true	true	l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v0 v0
+eq	generated-5-3-distinct	false	false	l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v4 v0	l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v0 v0
+eq	generated-5-4-first	true	true	l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v4 v0 v0	l s1 l s1 l s1 l s1 l s1 v4
+eq	generated-5-4-last	true	true	l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-5-4-distinct	false	false	l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v4 v0 v0	l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-5-5-first	true	true	l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v4 v0 v0	l s1 l s1 l s1 l s1 l s1 v4
+eq	generated-5-5-last	true	true	l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-5-5-distinct	false	false	l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v4 v0 v0	l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-5-6-first	true	true	l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v4 v0 v0 v0	l s1 l s1 l s1 l s1 l s1 v4
+eq	generated-5-6-last	true	true	l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0 v0
+eq	generated-5-6-distinct	false	false	l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v4 v0 v0 v0	l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0 v0
+eq	generated-6-1-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 v5	l s1 l s1 l s1 l s1 l s1 l s1 v5
+eq	generated-6-1-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 v0
+eq	generated-6-1-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 v5	l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 v0
+eq	generated-6-2-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v5 v0	l s1 l s1 l s1 l s1 l s1 l s1 v5
+eq	generated-6-2-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v0 v0
+eq	generated-6-2-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v5 v0	l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v0 v0
+eq	generated-6-3-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v5 v0	l s1 l s1 l s1 l s1 l s1 l s1 v5
+eq	generated-6-3-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v0 v0
+eq	generated-6-3-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v5 v0	l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v0 v0
+eq	generated-6-4-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v5 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 v5
+eq	generated-6-4-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-6-4-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v5 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-6-5-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v5 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 v5
+eq	generated-6-5-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-6-5-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v5 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-6-6-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v5 v0 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 v5
+eq	generated-6-6-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0 v0
+eq	generated-6-6-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v5 v0 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0 v0
+eq	generated-7-1-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 v6	l s1 l s1 l s1 l s1 l s1 l s1 l s1 v6
+eq	generated-7-1-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 v0
+eq	generated-7-1-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 v6	l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 v0
+eq	generated-7-2-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v6 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 v6
+eq	generated-7-2-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v0 v0
+eq	generated-7-2-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v6 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v0 v0
+eq	generated-7-3-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v6 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 v6
+eq	generated-7-3-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v0 v0
+eq	generated-7-3-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v6 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v0 v0
+eq	generated-7-4-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v6 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 v6
+eq	generated-7-4-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-7-4-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v6 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-7-5-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v6 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 v6
+eq	generated-7-5-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-7-5-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v6 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-7-6-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v6 v0 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 v6
+eq	generated-7-6-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0 v0
+eq	generated-7-6-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v6 v0 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0 v0
+eq	generated-8-1-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 v7	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v7
+eq	generated-8-1-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 v0
+eq	generated-8-1-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 v7	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 v0
+eq	generated-8-2-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v7 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v7
+eq	generated-8-2-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v0 v0
+eq	generated-8-2-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v7 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v0 v0
+eq	generated-8-3-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v7 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v7
+eq	generated-8-3-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v0 v0
+eq	generated-8-3-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v7 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v0 v0
+eq	generated-8-4-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v7 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v7
+eq	generated-8-4-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-8-4-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v7 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-8-5-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v7 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v7
+eq	generated-8-5-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-8-5-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v7 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-8-6-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v7 v0 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v7
+eq	generated-8-6-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0 v0
+eq	generated-8-6-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v7 v0 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0 v0
+eq	generated-9-1-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 v8	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v8
+eq	generated-9-1-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 v0
+eq	generated-9-1-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 v8	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 v0
+eq	generated-9-2-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v8 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v8
+eq	generated-9-2-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v0 v0
+eq	generated-9-2-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v8 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 v0 v0
+eq	generated-9-3-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v8 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v8
+eq	generated-9-3-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v0 v0
+eq	generated-9-3-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v8 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 v0 v0
+eq	generated-9-4-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v8 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v8
+eq	generated-9-4-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-9-4-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v8 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-9-5-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v8 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v8
+eq	generated-9-5-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-9-5-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v8 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0
+eq	generated-9-6-first	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v8 v0 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v8
+eq	generated-9-6-last	true	true	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0 v0
+eq	generated-9-6-distinct	false	false	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v8 v0 v0 v0	l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 l s1 t s1 a l s1 v0 t s1 a l s1 v0 t s1 a l s1 v0 v0 v0 v0 v0
 whnf	beta-head	a l s1 v0 s0	s0
 whnf	zeta-head	t s1 s0 v0	s0
 whnf	whnf-stops-under-lambda	l s1 a l s1 v0 v0	l s1 a l s1 v0 v0

@@ -31,6 +31,30 @@ def checked (operation : String) (result : Except Kernel.Exception α) : IO α :
   | .ok result => pure result
   | .error _ => throw (IO.userError s!"Lean kernel failed: {operation}")
 
+-- Both wrappers preserve the type of a term in the surrounding context.
+def expand (ty : Expr) : Nat → Expr → Expr
+  | 0, term => term
+  | n + 1, term =>
+    let previous := expand ty n term
+    if n % 2 == 0 then .app (lam ty (v 0)) previous
+    else letIn ty previous (v 0)
+
+def bindTypes (ty : Expr) (depth : Nat) (body : Expr) : Expr :=
+  Nat.rec body (fun _ inner => lam ty inner) depth
+
+def conversionRow (env : Environment) (name : String) (left right : Expr)
+    (expectedLean expectedRust : Bool) (requireSameType : Bool := false) : IO String := do
+  let leftType ← checked name (Kernel.check env {} left)
+  let rightType ← checked name (Kernel.check env {} right)
+  let sameType ← checked name (Kernel.isDefEq env {} leftType rightType)
+  if (expectedLean || requireSameType) && !sameType then
+    throw (IO.userError s!"expected equal types: {name}")
+  let actual ← checked name (Kernel.isDefEq env {} left right)
+  unless actual == expectedLean do
+    throw (IO.userError s!"unexpected conversion result: {name}: {actual}")
+  pure (String.intercalate "\t"
+    ["eq", name, toString actual, toString expectedRust, encode left, encode right])
+
 def main (args : List String) : IO Unit := do
   let [output] := args | throw (IO.userError "expected output path")
   initSearchPath (← findSysroot)
@@ -58,13 +82,17 @@ def main (args : List String) : IO Unit := do
   ]
   let mut rows := #[]
   for (name, left, right, expectedLean, expectedRust) in pairs do
-    let _ ← checked name (Kernel.check env {} left)
-    let _ ← checked name (Kernel.check env {} right)
-    let actual ← checked name (Kernel.isDefEq env {} left right)
-    unless actual == expectedLean do
-      throw (IO.userError s!"unexpected conversion result: {name}: {actual}")
-    rows := rows.push (String.intercalate "\t"
-      ["eq", name, toString actual, toString expectedRust, encode left, encode right])
+    rows := rows.push (← conversionRow env name left right expectedLean expectedRust)
+  for depth in [2:10] do
+    for steps in [1:7] do
+      let name := s!"generated-{depth}-{steps}"
+      let first := bindTypes ty depth (v (depth - 1))
+      let last := bindTypes ty depth (v 0)
+      let expandedFirst := bindTypes ty depth (expand ty steps (v (depth - 1)))
+      let expandedLast := bindTypes ty depth (expand ty steps (v 0))
+      rows := rows.push (← conversionRow env (name ++ "-first") expandedFirst first true true)
+      rows := rows.push (← conversionRow env (name ++ "-last") last expandedLast true true)
+      rows := rows.push (← conversionRow env (name ++ "-distinct") expandedFirst expandedLast false false true)
   let heads := [
     ("beta-head", .app id prop),
     ("zeta-head", letIn ty prop (v 0)),

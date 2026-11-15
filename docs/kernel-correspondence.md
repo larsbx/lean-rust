@@ -46,8 +46,11 @@ admission would require their own correspondence and rejection tests.
 
 ## Evidence
 
-- 19 Lean-generated rows: nine matching equality verdicts, two deliberate
-  equality disagreements, four WHNF comparisons, and four open substitutions.
+- 163 Lean-generated rows include 19 hand-written fixtures and 144 generated
+  conversion cases. The generated cases vary binder depth (2–9) and alternating
+  β/ζ wrapper count (1–6). Each configuration checks reduction to the outermost
+  and innermost variables, with a same-type negative control comparing them.
+  Lean checks both terms and confirms that they have definitionally equal types.
 - 1,024 deterministic generated Rust cases exercise normalization idempotence,
   conversion symmetry, and agreement after β and ζ expansion.
 - Negative controls exercise capture and shadowing, out-of-scope indices in
